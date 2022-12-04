@@ -65,12 +65,11 @@ def req_one(id):
 
 if __name__ == '__main__':
 
+    file_path = 'transactions.txt'  # Сюда пишем имя фаила на проверку. Только txt, разделитель \n
+
     incorrect_post = 'Program log: Instruction: Sell'  # Всегда в ['logMessage'][1]
 
     list = file_to_list('transactions.txt')
-
-    # req_cycle(list)  # Это работает медленно
-    # map(req_one, list)  # Это должно работать быстрее, но не работает вообще
 
     pool = Pool(processes=3)
     pool.map(req_one, list)

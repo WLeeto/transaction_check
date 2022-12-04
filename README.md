@@ -8,15 +8,29 @@
 * 'Имя транзакции' : 'True/False'
 
 В логах:
+
+logs.txt:
 - True - не содержит 'Program log: Instruction: Sell'
 - False - содержит 'Program log: Instruction: Sell'
+
+logs_false.txt:
+- Только id транзакций не прошедших проверку
 
 ---------------
 
 Установка зависимостей:
 * pip install requirements.txt
 
-Запуск из:
-* main.py
+Запуск с разложением по процессам (самый бустрый):
+* multiprocessing_req.py
 
-Запуск с разложением по процессам (3-4 раза быстрее) из multiprocessing_req.py
+---------------
+
+Бета версии:
+* main.py (функционально)
+* session_req (ООП - сессионый запуск)
+* async_req (асинхронная функция, по идее должно было быть быстрее, но нет)
+
+---------------
+
+Перед запуском удалите фаилы logs.txt и logs_false.txt если они присутствуют
